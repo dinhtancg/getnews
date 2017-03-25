@@ -18,6 +18,7 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
   // connection: 'localDiskDb',
+  connection: 'default',
 
   /***************************************************************************
   *                                                                          *
@@ -27,6 +28,26 @@ module.exports.models = {
   * See http://sailsjs.org/#!/documentation/concepts/ORM/model-settings.html  *
   *                                                                          *
   ***************************************************************************/
-   migrate: 'alter'
+  // migrate: 'alter'
+  migrate: 'safe',
+
+  autoCreatedAt: false,
+  autoUpdatedAt: false,
+  attributes: {
+    created_time: {
+      type: 'datetime',
+      defaultsTo: function() {return new Date();}
+    },
+    updated_time: {
+      type: 'datetime',
+      defaultsTo: function() {return new Date();}
+    }
+  },
+
+  //Resonsible for actually updating the 'updated_time' property.
+  beforeValidate:function(values, next) {
+    values.updated_time = new Date();
+    next();
+  },
 
 };

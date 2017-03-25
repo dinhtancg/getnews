@@ -7,11 +7,13 @@
 
 module.exports = {
   	getData : function(req, res){
-  		var urls ="http://vnexpress.net/tin-tuc/thoi-su";
+  		var urls =["http://vnexpress.net/tin-tuc/thoi-su","http://vnexpress.net/tin-tuc/phap-luat"];
 
   		async.auto({
 	  		data : function (next) {
-	  			NewsService.scrape(urls, next);
+          _.forEach(urls, function(url){
+            NewsService.scrape(url);
+          });
 	  		},
   		}, function (err, ret) {
 	  		if (err) {

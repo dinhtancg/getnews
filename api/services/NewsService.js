@@ -25,8 +25,8 @@ module.exports = {
 					    	news_lead : news_lead
 					    };
 					    console.log(obj);
-					    console.log("=====");
-					    News.create(obj).exec(function (err,record) {
+					    console.log("=="+url+"===");
+					    News.findOrCreate(obj).exec(function (err,record) {
 							if (err)
 							  	res.json({error:err});
 		          

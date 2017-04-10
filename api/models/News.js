@@ -9,15 +9,18 @@ module.exports = {
 
 attributes: {
 	title: {
-		      	type:"string",
-		      	unique : true
+		type:"string",
+		unique : true
 		},
-    url: {
-		      	type:"string",
-		      	unique : true
+	description: {
+		type: 'string'
+	},
+    link: {
+		type:"string",
+		unique : true
 		},
-    news_lead: {
-		      	type:"string",
+    pubDate: {
+		type:"string",
 		}
   }
 };

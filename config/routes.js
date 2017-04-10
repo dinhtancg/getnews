@@ -46,4 +46,5 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
   '/getnews': 'NewsController.start',
+  '/getnewsrss': 'RssController.start',
 };

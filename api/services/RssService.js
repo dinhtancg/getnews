@@ -8,18 +8,22 @@ module.exports = {
 		console.log(url);
 		async.auto({
 		    getnewsVNN : function(next){
+
+		    	//Lấy dữ liệu
 			    Feed.load(url, function(err, rss){
     				_.forEach(rss.items, function (item){
     					var obj = {
     						title: item.title,
     						description : item.description,
     						link : item.link,
+    						source: rss.title
     					};
+    					// ghi vào DB nếu trùng thì k nhận.
     					News.findOrCreate(obj).exec(function (err,record) {
 							if (err)
 							  	res.json({error:err});
 		          
-								console.log(record); // Google
+								console.log(record); 
 							});
     				});
 				});
@@ -31,5 +35,8 @@ module.exports = {
 				callback(null, ret);
 			});
 
-	},	 
+	},
+	filter: function(array, callback){
+
+	}
 }

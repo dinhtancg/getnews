@@ -9,18 +9,25 @@ module.exports = {
 
 attributes: {
 	title: {
-		type:"string",
+		type:'string',
 		unique : true
-		},
+	},
+
 	description: {
 		type: 'string'
 	},
+
     link: {
-		type:"string",
+		type:'string',
 		unique : true
-		},
+	},
+
+	source: {
+		type: 'string'
+	},
+
     pubDate: {
-		type:"string",
+		type:'string',
 		}
   }
 };

@@ -1,22 +1,29 @@
+
+// core modules
+var fs = require('fs');
+var url = require('url');
+
+//third party modules
+var Feed = require('rss-to-json');
 var request = require('request');
 var cheerio = require('cheerio');
-var fs = require('fs');
-var Feed = require('rss-to-json');
 
 module.exports = {
+
+	//lấy tin từ Rss feeds pages
 	scrape : function(url, callback){
 		console.log(url);
 		async.auto({
-		    getnewsVNN : function(next){
+		    getNews: function(next){
 
 		    	//Lấy dữ liệu
 			    Feed.load(url, function(err, rss){
     				_.forEach(rss.items, function (item){
     					var obj = {
     						title: item.title,
-    						description : item.description,
-    						link : item.link,
-    						source: rss.title
+    						description: item.description,
+    						link: item.link,
+    						source: rss.title,
     					};
     					// ghi vào DB nếu trùng thì k nhận.
     					News.findOrCreate(obj).exec(function (err,record) {
@@ -36,7 +43,5 @@ module.exports = {
 			});
 
 	},
-	filter: function(array, callback){
-
-	}
 }
+

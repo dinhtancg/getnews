@@ -45,6 +45,5 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-  '/getnews': 'NewsController.start',
-  '/getnewsrss': 'RssController.start',
+  'get /getnewsrss': 'RssController.getData',
 };

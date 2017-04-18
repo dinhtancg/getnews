@@ -1,60 +1,40 @@
-/**
- * app.js
- *
- * Use `app.js` to run your app without `sails lift`.
- * To start the server, run: `node app.js`.
- *
- * This is handy in situations where the sails CLI is not relevant or useful.
- *
- * For example:
- *   => `node app.js`
- *   => `forever start app.js`
- *   => `node debug app.js`
- *   => `modulus deploy`
- *   => `heroku scale`
- *
- *
- * The same command-line arguments are supported, e.g.:
- * `node app.js --silent --port=80 --prod`
- */
+var request = require('request');
+var Sails = require('sails').constructor;
 
-
-// Ensure we're in the project directory, so cwd-relative paths work as expected
-// no matter where we actually lift from.
-// > Note: This is not required in order to lift, but it is a convenient default.
-process.chdir(__dirname);
-
-// Attempt to import `sails`.
-var sails;
-try {
-  sails = require('sails');
-} catch (e) {
-  console.error('To run an app using `node app.js`, you usually need to have a version of `sails` installed in the same directory as your app.');
-  console.error('To do that, run `npm install sails`');
-  console.error('');
-  console.error('Alternatively, if you have sails installed globally (i.e. you did `npm install -g sails`), you can use `sails lift`.');
-  console.error('When you run `sails lift`, your app will still use a local `./node_modules/sails` dependency if it exists,');
-  console.error('but if it doesn\'t, the app will run with the global sails instead!');
-  return;
-}
-
-// --•
-// Try to get `rc` dependency (for loading `.sailsrc` files).
-var rc;
-try {
-  rc = require('rc');
-} catch (e0) {
-  try {
-    rc = require('sails/node_modules/rc');
-  } catch (e1) {
-    console.error('Could not find dependency: `rc`.');
-    console.error('Your `.sailsrc` file(s) will be ignored.');
-    console.error('To resolve this, run:');
-    console.error('npm install rc --save');
-    rc = function () { return {}; };
+var mySailsApp = new Sails();
+mySailsApp.lift({
+  port: 1337
+  // Optionally pass in any other programmatic config overrides you like here.
+}, function(err) {
+  if (err) {
+    console.error('Failed to lift app.  Details:', err);
+    return;
   }
-}
 
+  // --•
+  // Make a request using the "request" library and display the response.
+  // Note that you still must have an `api/controllers/RssController.js` file
+  // under the current working directory, or a `/getnewsrss` or `GET /getnewsrss` route
+  // set up in `config/routes.js`.
+  request.get('http://localhost:1337/getnewsrss', function (err, response) {
+    if (err) {
+      console.log('Could not send HTTP request.  Details:', err);
+    }
+    else {
+      console.log('Got response:', response);
+    }
 
-// Start server
-sails.lift(rc('sails'));
+    // >--
+    // In any case, whether the request worked or not, now we need to call `.lower()`.
+    mySailsApp.lower(function (err) {
+      if (err) {
+        console.log('Could not lower Sails app.  Details:',err);
+        return;
+      }
+
+      // --•
+      console.log('Successfully lowered Sails app.');
+
+    });//</lower sails app>
+  });//</request.get() :: send http request>
+});//</lift sails app>

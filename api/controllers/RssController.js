@@ -23,7 +23,4 @@ module.exports = {
         res.ok(ret);
       });
     },
-    start: function () {
-     this.getData();
-    },
 }

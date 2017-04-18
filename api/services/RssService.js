@@ -19,6 +19,7 @@ module.exports = {
 		    	//Lấy dữ liệu
 			    Feed.load(url, function(err, rss){
     				_.forEach(rss.items, function (item){
+
     					var obj = {
     						title: item.title,
     						description: item.description,

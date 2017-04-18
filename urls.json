@@ -1,7 +1,13 @@
 [	"http://dantri.com.vn/suc-khoe.rss",
-	"http://dantri.com.vn/xa-hoi.rss",
-	"http://dantri.com.vn/giai-tri.rss",
+	"http://vnexpress.net/rss/tin-moi-nhat.rss",
 	"http://vnexpress.net/rss/thoi-su.rss",
 	"http://vnexpress.net/rss/the-gioi.rss",
-	"http://vnexpress.net/rss/startup.rss"
+	"http://vnexpress.net/rss/kinh-doanh.rss",
+	"http://vnexpress.net/rss/startup.rss",
+	"http://vnexpress.net/rss/giai-tri.rss",
+	"http://vnexpress.net/rss/the-thao.rss",
+	"http://vnexpress.net/rss/phap-luat.rss",
+	"http://vnexpress.net/rss/giao-duc.rss",
+	"http://vietnamnet.vn/rss/phap-luat.rss",
+	"http://vietnamnet.vn/rss/cong-nghe.rss"
 ]

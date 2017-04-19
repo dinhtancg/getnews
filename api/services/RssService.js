@@ -31,7 +31,7 @@ module.exports = {
 							if (err)
 							  	res.json({error:err});
 		          
-								console.log(record); 
+								console.log(record.source); 
 							});
     				});
 				});

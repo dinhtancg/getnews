@@ -1,5 +1,6 @@
 var request = require('request');
 var Sails = require('sails').constructor;
+var bhttp = require("bhttp");
 
 var mySailsApp = new Sails();
 mySailsApp.lift({
@@ -16,25 +17,27 @@ mySailsApp.lift({
   // Note that you still must have an `api/controllers/RssController.js` file
   // under the current working directory, or a `/getnewsrss` or `GET /getnewsrss` route
   // set up in `config/routes.js`.
-  request.get('http://localhost:1337/getnewsrss', function (err, response) {
-    if (err) {
-      console.log('Could not send HTTP request.  Details:', err);
-    }
-    else {
-      console.log('Got response:', response);
-    }
+  setInterval(function(){
+      bhttp.get('http://localhost:1337/getnewsrss', function (err, response) {
+        if (err) {
+          console.log('Could not send HTTP request.  Details:', err);
+        }
+        else {
+          console.log('Got response:', response);
+        }
 
-    // >--
-    // In any case, whether the request worked or not, now we need to call `.lower()`.
-    mySailsApp.lower(function (err) {
-      if (err) {
-        console.log('Could not lower Sails app.  Details:',err);
-        return;
-      }
+        // >--
+        // In any case, whether the request worked or not, now we need to call `.lower()`.
+        mySailsApp.lower(function (err) {
+          if (err) {
+            console.log('Could not lower Sails app.  Details:',err);
+            return;
+          }
 
-      // --•
-      console.log('Successfully lowered Sails app.');
+          // --•
+          console.log('Successfully lowered Sails app.');
 
-    });//</lower sails app>
-  });//</request.get() :: send http request>
+        });//</lower sails app>
+      });//</request.get() :: send http request>
+    }, 30000);
 });//</lift sails app>

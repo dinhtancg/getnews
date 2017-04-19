@@ -5,6 +5,7 @@
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
+    "bhttp": "^1.2.4",
     "checkit": "^0.7.0",
     "cheerio": "^0.22.0",
     "crawler": "^1.0.3",

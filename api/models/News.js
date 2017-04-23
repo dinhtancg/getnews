@@ -25,9 +25,5 @@ attributes: {
 	source: {
 		type: 'string'
 	},
-
-    pubDate: {
-		type:'string',
-		}
   }
 };

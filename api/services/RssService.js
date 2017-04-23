@@ -25,7 +25,7 @@ module.exports = {
     						description: item.description,
     						link: item.link,
     						source: rss.title,
-    						category_id: dataUrl.id
+    						category_name: dataUrl.title
     					};
     					// ghi vào DB nếu trùng thì k nhận.
     					News.findOrCreate(obj).exec(function (err,record) {

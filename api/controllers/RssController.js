@@ -16,14 +16,12 @@ module.exports = {
             var obj = {
               category_name: url.title    
             };
-            Categories.findOrCreate(obj).exec(function (err,record) {
+            Category.findOrCreate(obj).exec(function (err,record) {
               if (err)
-                  res.json({error:err});
-              
-                console.log(record); 
-                RssService.scrape(record);
+                  res.json({error:err}); 
+                  console.log("Done!!");              
               });
-            
+            RssService.scrape(url); 
           });
         },
       }, function (err, ret) {

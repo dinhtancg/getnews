@@ -11,27 +11,28 @@ var cheerio = require('cheerio');
 module.exports = {
 
 	//lấy tin từ Rss feeds pages
-	scrape : function(url, callback){
-		console.log(url);
+	scrape : function(dataUrl, callback){
+		console.log(dataUrl);
 		async.auto({
 		    getNews: function(next){
 
 		    	//Lấy dữ liệu
-			    Feed.load(url, function(err, rss){
+			    Feed.load(dataUrl.url, function(err, rss){
+			    	
     				_.forEach(rss.items, function (item){
-
     					var obj = {
     						title: item.title,
     						description: item.description,
     						link: item.link,
     						source: rss.title,
+    						category_id: dataUrl.id
     					};
     					// ghi vào DB nếu trùng thì k nhận.
     					News.findOrCreate(obj).exec(function (err,record) {
 							if (err)
 							  	res.json({error:err});
 		          
-								console.log(record.source); 
+								console.log(record); 
 							});
     				});
 				});

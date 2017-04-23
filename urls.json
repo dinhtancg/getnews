@@ -1,13 +1,26 @@
-[	"http://dantri.com.vn/suc-khoe.rss",
-	"http://vnexpress.net/rss/tin-moi-nhat.rss",
-	"http://vnexpress.net/rss/thoi-su.rss",
-	"http://vnexpress.net/rss/the-gioi.rss",
-	"http://vnexpress.net/rss/kinh-doanh.rss",
-	"http://vnexpress.net/rss/startup.rss",
-	"http://vnexpress.net/rss/giai-tri.rss",
-	"http://vnexpress.net/rss/the-thao.rss",
-	"http://vnexpress.net/rss/phap-luat.rss",
-	"http://vnexpress.net/rss/giao-duc.rss",
-	"http://vietnamnet.vn/rss/phap-luat.rss",
-	"http://vietnamnet.vn/rss/cong-nghe.rss"
+[	
+	{
+		"url":"http://dantri.com.vn/suc-khoe.rss",
+		"title":"Sức Khỏe"
+	},
+	{
+		"url":"http://dantri.com.vn/xa-hoi.rss",
+		"title":"Xã Hội"
+	},
+	{
+		"url":"http://dantri.com.vn/giai-tri.rss",
+		"title":"Giải Trí"
+	},
+	{
+		"url":"http://vnexpress.net/rss/thoi-su.rss",
+		"title":"Thời Sự"
+	},
+	{
+		"url":"http://vnexpress.net/rss/the-gioi.rss",
+		"title":"Thế Giới"
+	},
+	{
+		"url":"http://vnexpress.net/rss/startup.rss",
+		"title":"Startup"
+	}
 ]

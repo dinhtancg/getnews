@@ -13,7 +13,17 @@ module.exports = {
       async.auto({
         data : function (next) {
           _.forEach(urls, function(url){
-            RssService.scrape(url);
+            var obj = {
+              category_name: url.title    
+            };
+            Categories.findOrCreate(obj).exec(function (err,record) {
+              if (err)
+                  res.json({error:err});
+              
+                console.log(record); 
+                RssService.scrape(record);
+              });
+            
           });
         },
       }, function (err, ret) {
@@ -22,5 +32,8 @@ module.exports = {
         }
         res.ok(ret);
       });
+    },
+    start: function () {
+     this.getData();
     },
 }

@@ -46,4 +46,22 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
   'get /getnewsrss': 'RssController.getData',
+
+
+  'get /login': {
+    view: 'login'
+  },
+
+  // Original FB authentication way
+  'get  /auth/facebook_origin': 'AuthController.facebookOrigin',
+  'get  /auth/facebook/callback': 'AuthController.fbCallback',
+
+  // A bit tricky but more convenient way
+  'get  /auth/facebook': 'AuthController.facebook',
+  'post /auth/facebook': 'AuthController.facebook',
+
+  // Get /logout will redirect to /
+  // Post /logout will return json format
+  'get  /logout': 'AuthController.logoutAndRedirect',
+  'post /logout': 'AuthController.logout',
 };

@@ -21,24 +21,12 @@ module.exports = {
       type: 'email',
       unique: true
     },
-    full_name: {
+    first_name: {
       type: 'string'
     },
-    profile_picture: {
+    last_name:{
       type: 'string'
-    },
-    bio: {
-      type: 'string'
-    },
-    website: {
-      type: 'string'
-    },
-    phone: {
-      type: 'string'
-    },
-    gender: {
-      type: 'string'
-    }
+    } 
   },
 
 };

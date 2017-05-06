@@ -20,10 +20,14 @@ module.exports = {
 			    Feed.load(dataUrl.url, function(err, rss){
 			    	
     				_.forEach(rss.items, function (item){
+    					
+    					var str = item.description;
+    					var img = str.substring(str.indexOf("<img"), str.indexOf("</a>"));
     					var obj = {
     						title: item.title,
     						description: item.description,
     						link: item.link,
+    						img: img,
     						source: rss.title,
     						category_name: dataUrl.title
     					};

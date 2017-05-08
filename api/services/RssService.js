@@ -20,9 +20,15 @@ module.exports = {
 			    Feed.load(dataUrl.url, function(err, rss){
 			    	
     				_.forEach(rss.items, function (item){
-    					
+    					var img;
     					var str = item.description;
-    					var img = str.substring(str.indexOf("<img"), str.indexOf("</a>"));
+    					if (str.includes("vnexpress.net")) {
+    						img =str.substring(str.indexOf("<img") ,str.indexOf('</a>'));
+    					}else{
+    						img = str.substring(str.indexOf("<img") ,(str.indexOf('" />')+4));
+    					}
+    					
+    					console.log(img);
     					var obj = {
     						title: item.title,
     						description: item.description,

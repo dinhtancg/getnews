@@ -22,5 +22,10 @@
 	{
 		"url":"http://vnexpress.net/rss/startup.rss",
 		"title":"Startup"
+	},
+	{
+		"url":"http://vietnamnet.vn/rss/cong-nghe.rss",
+		"title":"Công Nghệ"
 	}
+
 ]

@@ -9,7 +9,18 @@ var request = require('request');
 var cheerio = require('cheerio');
 
 module.exports = {
-
+	decodeHtml :function(str)
+	{
+	    var map =
+	    {
+	        '&amp;': '&',
+	        '&lt;': '<',
+	        '&gt;': '>',
+	        '&quot;': '"',
+	        '&#039;': "'"
+	    };
+	    return str.replace(/&amp;|&lt;|&gt;|&quot;|&#039;/g, function(m) {return map[m];});
+	},
 	//lấy tin từ Rss feeds pages
 	scrape : function(dataUrl, callback){
 		console.log(dataUrl);
@@ -27,11 +38,14 @@ module.exports = {
     					}else{
     						img = str.substring(str.indexOf("<img") ,(str.indexOf('" />')+4));
     					}
-    					
+    					if(str.includes("thanhnien.vn")){
+    						str = decodeHtml(str);
+    					}
+    					img = img.replace("img", "img width=490 height=294");
     					console.log(img);
     					var obj = {
     						title: item.title,
-    						description: item.description,
+    						description: str,
     						link: item.link,
     						img: img,
     						source: rss.title,

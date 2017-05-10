@@ -34,14 +34,28 @@ module.exports = {
     					var img;
     					var str = item.description;
     					if (str.includes("vnexpress.net")) {
-    						img =str.substring(str.indexOf("<img") ,str.indexOf('</a>'));
-    					}else{
+    						img = str.substring(str.indexOf("<img width") ,str.indexOf('</a>'));
+    						img = img.replace('<img width=130 height=100 src="','');
+    						img = img.replace('_180x108', '');
+    						img = img.replace('" >','');
+    					}if (str.includes("24h.com.vn")){
+    						img = str.substring(str.indexOf("<img") ,str.indexOf("' alt"));
+    						img = img.replace("<img width='130' height='100' src='","");
+       					}else{
     						img = str.substring(str.indexOf("<img") ,(str.indexOf('" />')+4));
+
+    						if(str.includes("dantri.com")){
+	    						img = img.replace('/zoom/80_50','');
+	    						img = img.replace('<img src="','');
+	    						img = img.replace('" />','');
+	    					}
+	    					if (img.includes("imgs.vietnamnet.vn")) {
+	    						img = img.replace('?w=220', '');
+	    						img = img.replace('<img src="','');
+	    						img = img.replace('" />','');
+	    					}
     					}
-    					if(str.includes("thanhnien.vn")){
-    						str = decodeHtml(str);
-    					}
-    					img = img.replace("img", "img width=490 height=294");
+    					
     					console.log(img);
     					var obj = {
     						title: item.title,

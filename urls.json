@@ -12,20 +12,12 @@
 		"title":"Giải Trí"
 	},
 	{
-		"url":"http://vnexpress.net/rss/thoi-su.rss",
-		"title":"Thời Sự"
-	},
-	{
-		"url":"http://vnexpress.net/rss/the-gioi.rss",
-		"title":"Thế Giới"
-	},
-	{
-		"url":"http://vnexpress.net/rss/startup.rss",
-		"title":"Startup"
-	},
-	{
 		"url":"http://vietnamnet.vn/rss/cong-nghe.rss",
 		"title":"Công Nghệ"
+	},
+	{
+		"url":"http://www.24h.com.vn/upload/rss/bongda.rss",
+		"title":"Bóng Đá"
 	}
 
 ]

@@ -50,6 +50,7 @@ module.exports = {
 	    						img = img.replace('/zoom/80_50','');
 	    						img = img.replace('<img src="','');
 	    						img = img.replace('" />','');
+	    						str = item.title;
 	    					}
 	    					if (img.includes("imgs.vietnamnet.vn")) {
 	    						img = img.replace('?w=220', '');

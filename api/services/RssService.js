@@ -33,14 +33,16 @@ module.exports = {
     				_.forEach(rss.items, function (item){
     					var img;
     					var str = item.description;
-    					if (str.includes("vnexpress.net")) {
-    						img = str.substring(str.indexOf("<img width") ,str.indexOf('</a>'));
+    					if (str.includes("24h.com.vn")){
+    						img = str.substring(str.indexOf("<img") ,str.indexOf("' alt"));
+    						img = img.replace("<img width='130' height='100' src='","");
+    					}
+    					else if (str.includes("vnexpress.net")) {
+    						img = str.substring(str.indexOf("<img width") ,str.indexOf("</a>"));
     						img = img.replace('<img width=130 height=100 src="','');
     						img = img.replace('_180x108', '');
     						img = img.replace('" >','');
-    					}if (str.includes("24h.com.vn")){
-    						img = str.substring(str.indexOf("<img") ,str.indexOf("' alt"));
-    						img = img.replace("<img width='130' height='100' src='","");
+    					
        					}else{
     						img = str.substring(str.indexOf("<img") ,(str.indexOf('" />')+4));
 

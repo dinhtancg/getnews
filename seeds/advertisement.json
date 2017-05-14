@@ -1,0 +1,21 @@
+[
+	{
+    "vitri" : 1,
+    "Mota" : "fpt",
+    "url" : "http://fptshop.com.vn/",
+    "img" : "fpt.jpg"
+	},
+	{
+    "vitri" : 1,
+    "Mota" : "TranAnh",
+    "url" : "http://trananh.vn/",
+    "img" : "fpt.jpg"
+	},
+	{
+    "vitri" : 1,
+    "Mota" : "Thế giới di động",
+    "url" : "http://thegioididong.com/",
+    "img" : "fpt.jpg"
+	}
+
+]

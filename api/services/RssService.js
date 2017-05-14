@@ -5,9 +5,6 @@ var url = require('url');
 
 //third party modules
 var Feed = require('rss-to-json');
-var request = require('request');
-var cheerio = require('cheerio');
-
 module.exports = {
 	decodeHtml :function(str)
 	{

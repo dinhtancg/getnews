@@ -1,4 +1,4 @@
-var request = require('request');
+
 var Sails = require('sails').constructor;
 var bhttp = require("bhttp");
 
@@ -39,5 +39,5 @@ mySailsApp.lift({
 
         });//</lower sails app>
       });//</request.get() :: send http request>
-    }, 30000);
+    }, 30000); //set time loop
 });//</lift sails app>

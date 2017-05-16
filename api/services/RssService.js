@@ -5,6 +5,7 @@ var url = require('url');
 
 //third party modules
 var Feed = require('rss-to-json');
+
 module.exports = {
 	decodeHtml :function(str)
 	{
@@ -56,7 +57,7 @@ module.exports = {
 	    					}
     					}
     					
-    					console.log(img);
+    					console.log(item.link);
     					var obj = {
     						title: item.title,
     						description: str,

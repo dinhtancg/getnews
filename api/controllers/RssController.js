@@ -19,7 +19,7 @@ module.exports = {
             Category.findOrCreate(obj).exec(function (err,record) {
               if (err)
                   res.json({error:err}); 
-                  console.log("Done!!");              
+                  //console.log("Done!!");              
               });
             RssService.scrape(url); 
           });

@@ -13,17 +13,12 @@ attributes: {
 		unique : true
 	},
 
-	description: {
-		type: 'string'
-	},
-
     link: {
 		type:'string',
 		unique : true
 	},
-
-	source: {
+	content:{
 		type: 'string'
-	},
+	}
   }
 };

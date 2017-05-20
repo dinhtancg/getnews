@@ -1,5 +1,24 @@
 [	
-	
+	{
+		"url":"http://vnexpress.net/rss/gia-dinh.rss",
+		"title": "Gia Đình"
+	},
+	{
+		"url":"http://dantri.com.vn/suc-khoe.rss",
+		"title":"Sức Khỏe"
+	},
+	{
+		"url":"http://dantri.com.vn/xa-hoi.rss",
+		"title":"Xã Hội"
+	},
+	{
+		"url":"http://dantri.com.vn/giai-tri.rss",
+		"title":"Giải Trí"
+	},
+	{
+		"url":"http://vietnamnet.vn/rss/cong-nghe.rss",
+		"title":"Công Nghệ"
+	},
 	{
 		"url":"http://www.24h.com.vn/upload/rss/bongda.rss",
 		"title":"Bóng Đá"

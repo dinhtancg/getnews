@@ -91,7 +91,7 @@ module.exports = {
 							            	link: item.link,
 							            	content: content,
 							            	img : item.img,
-							            	category_name: img.category_name
+							            	category_name: item.category_name
 							            }
 					            	});
 					            }
@@ -104,7 +104,7 @@ module.exports = {
 							            	link: item.link,
 							            	content: content,
 							            	img : item.img,
-							            	category_name: img.category_name
+							            	category_name: item.category_name
 							            }
 					            	});
 					            }
@@ -118,7 +118,7 @@ module.exports = {
 							            	link: item.link,
 							            	content: content,
 							            	img : item.img,
-							            	category_name: img.category_name
+							            	category_name: item.category_name
 							            }
 					            	});
 					            }
@@ -132,7 +132,7 @@ module.exports = {
 							            	link: item.link,
 							            	content: content,
 							            	img : item.img,
-							            	category_name: img.category_name
+							            	category_name: item.category_name
 							            }
 					            	});
 					            }

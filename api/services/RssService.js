@@ -9,25 +9,17 @@ var request = require('request');
 var cheerio = require('cheerio');
 
 module.exports = {
-	decodeHtml :function(str)
-	{
-	    var map =
-	    {
-	        '&amp;': '&',
-	        '&lt;': '<',
-	        '&gt;': '>',
-	        '&quot;': '"',
-	        '&#039;': "'"
-	    };
-	    return str.replace(/&amp;|&lt;|&gt;|&quot;|&#039;/g, function(m) {return map[m];});
-	},
-	//lấy tin từ Rss feeds pages
+	
+	//lấy link từ Rss feeds pages
 	scrape : function(dataUrl, callback){
 		async.auto({
 			getlinks: function(next){
 
 		    	//Lấy dữ liệu
-			    Feed.load(dataUrl.url, function(err, rss){	    	
+			    Feed.load(dataUrl.url, function(err, rss){	    
+			    if (err) {
+			    	console.log('Could not send HTTP request.  Details:', err);
+			    	}	
     				_.forEach(rss.items, function (item){ 
     					var img;
     					var str = item.description;
@@ -56,42 +48,20 @@ module.exports = {
 	    						img = img.replace('" />','');
 	    					}
     					}   					
-    					console.log(item.link);
-    					var obj = {
-    						title: item.title,
-    						link: item.link,
-    						img: img,
-    						source: rss.title,
-    						category_name: dataUrl.title
-    					};
-    					// ghi vào DB nếu trùng thì k nhận.
-    					Link.findOrCreate(obj).exec(function (err,record) {
-							if (err){
-								return err;
-								}
-							  	
-								console.log(record); 
-							});
-    				});
-				});
-		  	},
-		  	getnews: function(next) {
-		  		Link.find({}).exec(function(err, items){
-        			_.forEach(items, function (item) {
-        				var tintuc;
-        				request(item.link, function(error, response, html){
+    					var obj;
+    					request(item.link, function(error, response, html){
 					        if(!error){
 					            var $ = cheerio.load(html);
 					            if (item.link.includes("dantri.com")) {
 					            	$('#divNewsContent').filter(function(){
 					                	var data = $(this);
 					                	var content = data.toString();
-					                	tintuc = {
+					                	obj = {
 							            	title: item.title,
 							            	link: item.link,
 							            	content: content,
-							            	img : item.img,
-							            	category_name: item.category_name
+							            	img : img,
+							            	category_name: dataUrl.title
 							            }
 					            	});
 					            }
@@ -99,12 +69,12 @@ module.exports = {
 					            	$('.fck_detail width_common block_ads_connect').filter(function(){
 					                	var data = $(this);
 					                	var content = data.toString();
-					                	tintuc = {
+					                	obj = {
 							            	title: item.title,
 							            	link: item.link,
 							            	content: content,
-							            	img : item.img,
-							            	category_name: item.category_name
+							            	img : img,
+							            	category_name: dataUrl.title
 							            }
 					            	});
 					            }
@@ -113,12 +83,12 @@ module.exports = {
 					                	var data = $(this);
 					                	var content = data.toString();
 					                	
-					                	tintuc = {
+					                	obj = {
 							            	title: item.title,
 							            	link: item.link,
 							            	content: content,
-							            	img : item.img,
-							            	category_name: item.category_name
+							            	img : img,
+							            	category_name: dataUrl.title
 							            }
 					            	});
 					            }
@@ -127,35 +97,32 @@ module.exports = {
 					                	var data = $(this);
 					                	var content = data.children().last().toString();
 					                	
-					                	tintuc = {
+					                	obj = {
 							            	title: item.title,
 							            	link: item.link,
 							            	content: content,
-							            	img : item.img,
-							            	category_name: item.category_name
+							            	img : img,
+							            	category_name: dataUrl.title
 							            }
+							           	
 					            	});
 					            }
-					            
-					            
-					    News.findOrCreate(tintuc).exec(function (err,record) {
-										if (err){
-											return err;
-											}
-										  	
-											//console.log(record); 
+					            News.findOrCreate(obj).exec(function (err,record) {
+										if (err) return err;
+ 										console.log(record);
 										});
-								}
-							})
-		   				 });
-			})
-		  	},
+					        }
+    					
+						});						
+		 			})
+				})
+			},
 		}, function(err, ret){
-				if (err) {
-					return callback(err);
-				}
-				callback(null, ret);
-			});
+					if (err) {
+						return callback(err);
+					}
+					callback(null, ret);
+				});
 	}
 }
 

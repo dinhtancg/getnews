@@ -107,9 +107,23 @@ module.exports = {
 					            	});
 					            }
 					            if (item.link.includes("24h.com.vn")) {
-					            	$('.colCenter').filter(function(){
+					            	$('.text-conent').filter(function(){
 					                	var data = $(this);
 					                	var content = data.children().last().toString();
+					                	
+					                	tintuc = {
+							            	title: item.title,
+							            	link: item.link,
+							            	content: content,
+							            	img : item.img,
+							            	category_name: item.category_name
+							            }
+					            	});
+					            }
+					            if (item.link.includes("vietnamnet.vn")) {
+					            	$('#ArticleContent').filter(function(){
+					                	var data = $(this);
+					                	var content = data.toString();
 					                	
 					                	tintuc = {
 							            	title: item.title,

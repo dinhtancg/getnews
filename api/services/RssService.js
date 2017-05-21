@@ -109,7 +109,7 @@ module.exports = {
 					            }
 					            News.findOrCreate(obj).exec(function (err,record) {
 										if (err) return err;
- 										console.log(record);
+ 										//console.log(record);
 										});
 					        }
     					

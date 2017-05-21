@@ -54,5 +54,7 @@ module.exports.routes = {
 
 
   '/logout': 'AuthController.logout',
-  '/home': 'HomeController.index'
+  '/home': 'HomeController.index',
+  //NewsRouter
+  'get /baiviet/:id': "NewsController.getNewsById"
 };

@@ -69,6 +69,8 @@ module.exports = {
 							if (err){
 								return err;
 								}
+							  	
+								console.log(record); 
 							});
     				});
 				});
@@ -89,12 +91,12 @@ module.exports = {
 							            	link: item.link,
 							            	content: content,
 							            	img : item.img,
-							            	category_name: item.category_name
+							            	category_name: img.category_name
 							            }
 					            	});
 					            }
 					            if (item.link.includes("vnexpress.net")) {
-					            	$('#left_calculator').filter(function(){
+					            	$('.fck_detail width_common block_ads_connect').filter(function(){
 					                	var data = $(this);
 					                	var content = data.toString();
 					                	tintuc = {
@@ -102,12 +104,26 @@ module.exports = {
 							            	link: item.link,
 							            	content: content,
 							            	img : item.img,
-							            	category_name: item.category_name
+							            	category_name: img.category_name
 							            }
 					            	});
 					            }
 					            if (item.link.includes("24h.com.vn")) {
 					            	$('.text-conent').filter(function(){
+					                	var data = $(this);
+					                	var content = data.toString();
+					                	
+					                	tintuc = {
+							            	title: item.title,
+							            	link: item.link,
+							            	content: content,
+							            	img : item.img,
+							            	category_name: img.category_name
+							            }
+					            	});
+					            }
+					            if (item.link.includes("vietnamnet.vn")) {
+					            	$('.ArticleContent').filter(function(){
 					                	var data = $(this);
 					                	var content = data.children().last().toString();
 					                	
@@ -116,21 +132,7 @@ module.exports = {
 							            	link: item.link,
 							            	content: content,
 							            	img : item.img,
-							            	category_name: item.category_name
-							            }
-					            	});
-					            }
-					            if (item.link.includes("vietnamnet.vn")) {
-					            	$('#ArticleContent').filter(function(){
-					                	var data = $(this);
-					                	var content = data.toString();
-					                	
-					                	tintuc = {
-							            	title: item.title,
-							            	link: item.link,
-							            	content: content,
-							            	img : item.img,
-							            	category_name: item.category_name
+							            	category_name: img.category_name
 							            }
 					            	});
 					            }

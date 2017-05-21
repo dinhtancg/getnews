@@ -19,6 +19,13 @@ attributes: {
 	},
 	content:{
 		type: 'string'
+	},
+	img : {
+		type: 'string',
+		required: true
+	},
+	category_name: {
+		type: 'string',
 	}
   }
 };

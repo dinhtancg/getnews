@@ -16,6 +16,13 @@ module.exports = {
       type:'string',
       required: true
     },
+    img: {
+      type: 'string',
+      required: true
+    },
+    source: {
+      type:'string',
+    },
     category_name: {
       type:'string',
       minLength: 1

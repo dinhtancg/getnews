@@ -7,7 +7,12 @@ var url = require('url');
 var Feed = require('rss-to-json');
 var request = require('request');
 var cheerio = require('cheerio');
-
+var redis = require("redis"),
+    client = redis.createClient(
+    	{
+    		host: 'localhost',
+    		port : 6379
+    	});
 
 module.exports = {
 	
@@ -109,7 +114,17 @@ module.exports = {
 
 				            News.findOrCreate(obj).exec(function (err,record) {
 								if (err) return err;
-								//CacheService.cache(record.id,  record.title);
+								var abc = {
+									id:record.id,
+									title : record.title
+									}
+
+								client.on("error", function (err) {
+								    console.log("Error " + err);
+								});
+
+								 
+								client.set(record.title, record.id, redis.print);
 							});
 
 							

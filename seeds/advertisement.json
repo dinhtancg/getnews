@@ -1,21 +1,45 @@
 [
 	{
-    "vitri" : 1,
-    "Mota" : "fpt",
-    "url" : "http://fptshop.com.vn/",
-    "img" : "fpt.jpg"
+        "vitri" : "1",
+        "Mota" : "Tr?n Anh",
+        "url" : "https://www.trananh.vn/khuyen-mai-tran-anh.htm",
+        "img" : "https://slide.trananh.com.vn/trananh/2017/05/10/banner.jpg"
 	},
 	{
-    "vitri" : 1,
-    "Mota" : "TranAnh",
-    "url" : "http://trananh.vn/",
-    "img" : "fpt.jpg"
+        "vitri" : "1",
+        "Mota" : "fpt",
+        "url" : "http://fptshop.com.vn/",
+        "img" : "http://cdn.fptshop.com.vn/Uploads/Originals/2017/5/13/636302394441254731_Banner-H1-OPPO-F3.jpg"
 	},
 	{
-    "vitri" : 1,
-    "Mota" : "Thế giới di động",
-    "url" : "http://thegioididong.com/",
-    "img" : "fpt.jpg"
-	}
+        "vitri" : "2",
+        "Mota" : "Pico",
+        "url" : "https://pico.vn/",
+        "img" : "https://cdn.pico.vn/Banner/3052_77x301.jpg"
+	},
+    {
+        "vitri" : "2",
+        "Mota" : "MediaMart",
+        "url" : "https://mediamart.vn/",
+        "img" : "https://cdn.mediamart.vn/Upload/images/2017/Thang04/10/BigHome-tragop-trung-SH-compressor.png"
+    },
+    {
+        "vitri" : "2",
+        "Mota" : "Big C",
+        "url" : "http://bigc.vn/",
+        "img" : "https://scontent.fhan2-1.fna.fbcdn.net/v/t1.0-9/18194806_10155421959939614_683557372908952287_n.jpg?oh=ba140a24d2683a734aca2c3e63739107&oe=59AC377E"
+    },
+    {
+        "vitri" : "1",
+        "Mota" : "mobilecity",
+        "url" : "http://mobilecity.vn/",
+        "img" : "http://images.mobilecity.vn/media/images/2017/02/dien-dan-mcforum.vn-slide-web.jpg"
+    },
+    {
+        "vitri" : "2",
+        "Mota" : "KFC",
+        "url" : "http://www.kfcvietnam.com.vn/vn/stores",
+        "img" : "http://www.kfcvietnam.com.vn/asset/banner/5589_290715134632_burger-comjpg.jpg"
+    }
 
 ]

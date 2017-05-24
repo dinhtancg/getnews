@@ -20,7 +20,7 @@ mySailsApp.lift({
   setInterval(function(){
       bhttp.get('http://localhost:1337/getnewsrss', function (err, response) {
         if (err) {
-          console.log('Could not send HTTP request.  Details:', err);
+          console.log('Khong gui dc request.  Details:', err);
         }
         else {
           console.log('Got response:', response);
@@ -39,5 +39,5 @@ mySailsApp.lift({
 
         });//</lower sails app>
       });//</request.get() :: send http request>
-    }, 30000); //set time loop
+    }, 3000); //set time loop
 });//</lift sails app>

@@ -4,6 +4,38 @@
 		"title": "Gia Đình"
 	},
 	{
+		"url":"http://vnexpress.net/rss/gl/xa-hoi.rss",
+		"title": "Xã Hội"
+	},
+	{
+		"url":"http://vnexpress.net/rss/gl/the-gioi.rss",
+		"title": "Thế Giới"
+	},
+	{
+		"url":"http://vnexpress.net/rss/gl/kinh-doanh.rss",
+		"title": "Kinh Doanh"
+	},
+	{
+		"url":"http://vnexpress.net/rss/gl/van-hoa.rss",
+		"title": "Văn Hóa"
+	},
+	{
+		"url":"http://vnexpress.net/rss/gl/the-thao.rss",
+		"title": "Thể Thao"
+	},
+	{
+		"url":"http://vnexpress.net/rss/gl/phap-luat.rss",
+		"title": "Pháp Luật"
+	},
+	{
+		"url":"http://vnexpress.net/rss/gl/doi-song.rss",
+		"title": "Đời Sống"
+	},
+	{
+		"url":"http://vnexpress.net/rss/gl/khoa-hoc.rss",
+		"title": "Công Nghệ"
+	},
+	{
 		"url":"http://dantri.com.vn/suc-khoe.rss",
 		"title":"Sức Khỏe"
 	},
@@ -16,13 +48,108 @@
 		"title":"Giải Trí"
 	},
 	{
+		"url":"http://dantri.com.vn/giao-duc-khuyen-hoc.rss",
+		"title":"Giáo Dục"
+	},
+	{
+		"url":"http://dantri.com.vn/the-thao.rss",
+		"title":"Thể Thao"
+	},
+	{
+		"url":"http://dantri.com.vn/the-gioi.rss",
+		"title":"Thế Giới"
+	},
+	{
+		"url":"http://dantri.com.vn/kinh-doanh.rss",
+		"title":"Kinh Doanh"
+	},
+	{
+		"url":"http://dantri.com.vn/viec-lam.rss",
+		"title":"Việc Làm"
+	},
+	{
+		"url":"http://dantri.com.vn/phap-luat.rss",
+		"title":"Pháp Luật"
+	},
+	{
+		"url":"http://dantri.com.vn/van-hoa.rss",
+		"title":"Văn Hóa"
+	},
+	{
+		"url":"http://dantri.com.vn/khoa-hoc-cong-nghe.rss",
+		"title":"Công Nghệ"
+	},
+	{
 		"url":"http://vietnamnet.vn/rss/cong-nghe.rss",
 		"title":"Công Nghệ"
 	},
 	{
+		"url":"http://vietnamnet.vn/rss/phap-luat.rss",
+		"title":"Pháp Luật"
+	},
+	{
+		"url":"http://vietnamnet.vn/rss/kinh-doanh.rss",
+		"title":"Kinh Doanh"
+	},
+	{
+		"url":"http://vietnamnet.vn/rss/giao-duc.rss",
+		"title":"Giáo Dục"
+	},
+	{
+		"url":"http://vietnamnet.vn/rss/thoi-su.rss",
+		"title":"Thời Sự"
+	},
+	{
+		"url":"http://vietnamnet.vn/rss/giai-tri.rss",
+		"title":"Giải Trí"
+	},
+	{
+		"url":"http://vietnamnet.vn/rss/suc-khoe.rss",
+		"title":"Sức Khỏe"
+	},
+	{
+		"url":"http://vietnamnet.vn/rss/the-thao.rss",
+		"title":"Thể Thao"
+	},
+	{
+		"url":"http://vietnamnet.vn/rss/doi-song.rss",
+		"title":"Đời Sống"
+	},
+	{
+		"url":"http://vietnamnet.vn/rss/the-gioi.rss",
+		"title":"Thế Giới"
+	},
+	{
+		"url":"http://vietnamnet.vn/rss/bat-dong-san.rss",
+		"title":"Bất Động Sản"
+	},
+	{
 		"url":"http://www.24h.com.vn/upload/rss/bongda.rss",
-		"title":"Bóng Đá"
+		"title":"Thể Thao"
+	},
+	{
+		"url":"http://www.24h.com.vn/upload/rss/lamdep.rss",
+		"title":"Làm Đẹp"
+	},
+	{
+		"url":"http://www.24h.com.vn/upload/rss/phim.rss",
+		"title":"Phim"
+	},
+	{
+		"url":"http://www.24h.com.vn/upload/rss/congnghethongtin.rss",
+		"title":"Công Nghệ"
+	},
+	{
+		"url":"http://www.24h.com.vn/upload/rss/suckhoedoisong.rss",
+		"title":"Đời Sống"
+	},
+	{
+		"url":"http://www.24h.com.vn/upload/rss/tintucquocte.rss",
+		"title":"Thế Giới"
+	},
+	{
+		"url":"http://www.24h.com.vn/upload/rss/giaitri.rss",
+		"title":"Giải Trí"
 	}
-	
 
 ]

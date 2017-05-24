@@ -13,14 +13,6 @@ module.exports = {
       async.auto({
         data : function (next) {
           _.forEach(urls, function(url){
-            var obj = {
-              category_name: url.title    
-            };
-            Category.findOrCreate(obj).exec(function (err,record) {
-              if (err)
-                  res.json({error:err}); 
-                  //console.log("Done!!");              
-              });
             RssService.scrape(url); 
           });
         },

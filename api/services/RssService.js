@@ -124,7 +124,7 @@ module.exports = {
 								});
 
 								 
-								client.set(record.title, record.id, redis.print);
+								client.hset('news',record.id, record.title, redis.print);
 							});
 
 							

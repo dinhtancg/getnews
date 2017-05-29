@@ -10,19 +10,21 @@ module.exports = {
 attributes: {
 	title: {
 		type:'string',
-		unique : true
+		unique : true,
 	},
 
     link: {
 		type:'string',
-		unique : true
+		unique : true,
 	},
 	content:{
-		type: 'string'
+		type: 'string',
+		unique : true
 	},
 	img : {
 		type: 'string',
-		required: true
+		//required: true,
+		unique : true
 	},
 	category_name: {
 		type: 'string',

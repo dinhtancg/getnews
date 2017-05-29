@@ -39,5 +39,5 @@ mySailsApp.lift({
 
         });//</lower sails app>
       });//</request.get() :: send http request>
-    }, 3000); //set time loop
+    }, 60000); //set time loop
 });//</lift sails app>

@@ -37,6 +37,7 @@
     "rc": "1.0.1",
     "redis": "^2.7.1",
     "request": "^2.81.0",
+    "request-promise": "^4.2.1",
     "rss-to-json": "^1.0.2",
     "sails": "~0.12.8",
     "sails-disk": "~0.10.9",

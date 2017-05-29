@@ -61,7 +61,6 @@ module.exports = {
 							};
 						rp(options)
 						    .then(function ($) {
-						    	console.log(options.uri);
 						        if (options.uri.includes("dantri.com")) {
 					            	$('#divNewsContent').filter(function(){
 					                	var data = $(this);
@@ -117,38 +116,36 @@ module.exports = {
 							           	
 					            	});
 					            }
-					            console.log(obj.link);
-				            	console.log(obj.title);
-				           		console.log('======');
-					   //          News.findOrCreate(obj).exec(function (err,record) {
-								// 	if (err) return err;
-								// 	client.on("error", function (err) {
-								// 	    console.log("Error " + err);
-								// 	});
-								// 	client.hset('news',record.id, record.title, redis.print);
-								// });
+					            if (obj != null) {
+					            	console.log(obj.link);
+					            	console.log(obj.title);
+					           		console.log('======');
+						   //          News.findOrCreate(obj).exec(function (err,record) {
+									// 	if (err) return err;
+									// 	client.on("error", function (err) {
+									// 	    console.log("Error " + err);
+									// 	});
+									// 	client.hset('news',record.id, record.title, redis.print);
+									// });
 
-								//=====================
-								News.find({title: obj.title}).exec(function (err, record) {
-									if (err) { console.log(err);}
-									if (record) {
-										console.log(record.id);
-										News.destroy(record).exec(function (err, reply) {
-											if (err) { console.log(err);}
-											console.log("Delete");
-										});
-										News.create(obj).exec(function(err, result){
-											if (err) { console.log(err);}
-											//console.log(result);
-											client.on("error", function (err) {
-										    	console.log("Error " + err);
-											});
-											client.hset('news',result.id, result.title, result.print);
-										})
+									//=====================
+									News.findOne({link: obj.link}).exec(function (err, record) {
+										console.log(record);
+										if (err) { console.log(err);}
+										if (!record) {
+											News.create(obj).exec(function(err, result){
+												if (err) { console.log(err);}
+												console.log(result);
+												client.on("error", function (err) {
+											    	console.log("Error " + err);
+												});
+												client.hset('news',result.id, result.title, result.print);
+											})
+										}
 
-									}
-
-								})
+									})
+					            }
+					            
 
 						    })
 						    .catch(function (err) {
